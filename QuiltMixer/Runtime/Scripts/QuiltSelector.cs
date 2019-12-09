@@ -46,15 +46,27 @@ public class QuiltSelector : MonoBehaviour
         }
     }
 
+    // for timeline update
     public int num_0 = 45;
     public int num_1 = 45;
     public int num_2 = 45;
+    public int num_3 = 45;
+    public int num_4 = 45;
 
     private void UpdateAnimation()
     {
-        textures[0].num = num_0;
-        textures[1].num = num_1;
-        textures[2].num = num_2;
+        int[] temp = new int[]
+        {
+            num_0,num_1,num_2,num_3,num_4
+        };
+
+        for( int i = 0; i < temp.Length; ++i)
+        {
+            if (i < textures.Length)
+            {
+                textures[i].num = temp[i];
+            }
+        }
     }
 
 
